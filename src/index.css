@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/App.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background for the whole page */
+    color: white;
+    font-family: 'Arial', sans-serif; /* Modern, simple font */
+  }
+  
+  .App {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the app in the middle of the page */
+    padding: 20px;
+  }
+
+  .welcome-message {
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Additional styles for search input */
+#s {
+  width: 55%; /* Default width */
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease;
+  background-color: #333; /* Default background */
+  color: #fff;
+  text-indent: 20px; /* Adjust text position */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#s:focus {
+  width: 120%; /* Expanded width */
+  background-color: #fff; /* Background color on focus */
+  color: #333; /* Text color on focus */
+}
+
+/* Search icon/button positioning */
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin: 10px;
+    width: 250px; /* Adjust size to make them smaller */
+  }
+  
+  .figure {
+    margin: 0; /* Remove default margins if necessary */
+    overflow: hidden; /* For rounded corners */
+  }
+  
+  .figure img {
+    width: 100%;
+    display: block;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  
+  .card:hover {
+    transform: scale(1.05); /* Slight scale to elevate the card */
+  }
+  
+  .card img {
+    width: 100%;
+    display: block; /* Removes bottom gap */
+  }
+  
+  .card-body {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card-title {
+    margin: 0;
+    font-size: 18px;
+    color: #ff6f00; /* Title color */
+  }
+  
+  .movie-details .card {
+    width: 60%; /* Bigger card size */
+    margin: auto; /* Center the card */
+}
+
+.movie-details .card-body {
+    width: 100%; /* Utilize full card width */
+    padding: 20px;
+    text-align: left; /* Align text to left */
+}
+
+.movie-details .card-body p {
+    margin-top: 10px;
+    color: #ccc; /* Lighter text color for visibility */
+}
+
+.movie-details figure img {
+    max-width: 100%; /* Ensure image does not overflow */
 }
